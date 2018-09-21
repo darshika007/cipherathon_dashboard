@@ -1,0 +1,414 @@
+/*Navbar*/
+body,html{
+    height: 100%;
+}
+
+/* remove outer padding */
+.main .row{
+    padding: 0px;
+    margin: 0px;
+}
+
+/*Remove rounded coners*/
+
+nav.sidebar.navbar {
+    border-radius: 0px;
+}
+
+nav.sidebar, .main{
+    -webkit-transition: margin 200ms ease-out;
+    -moz-transition: margin 200ms ease-out;
+    -o-transition: margin 200ms ease-out;
+    transition: margin 200ms ease-out;
+}
+
+/* Add gap to nav and right windows.*/
+.main{
+    padding: 10px 10px 0 10px;
+}
+
+/* .....NavBar: Icon only with coloring/layout.....*/
+
+/*small/medium side display*/
+@media (min-width: 768px) {
+
+    /*Allow main to be next to Nav*/
+    .main{
+        position: absolute;
+        width: calc(100% - 40px); /*keeps 100% minus nav size*/
+        margin-left: 40px;
+        float: right;
+    }
+
+    /*lets nav bar to be showed on mouseover*/
+    nav.sidebar:hover + .main{
+        margin-left: 200px;
+    }
+
+    /*Center Brand*/
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 0px;
+    }
+    /*Center Brand*/
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    /*Center Icons*/
+    nav.sidebar a{
+        padding-right: 13px;
+    }
+
+    /*adds border top to first nav box */
+    nav.sidebar .navbar-nav > li:first-child{
+        border-top: 1px #e5e5e5 solid;
+    }
+
+    /*adds border to bottom nav boxes*/
+    nav.sidebar .navbar-nav > li{
+        border-bottom: 1px #e5e5e5 solid;
+    }
+
+    /* Colors/style dropdown box*/
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    /*allows nav box to use 100% width*/
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+        padding: 0 0px 0 0px;
+    }
+
+    /*colors dropdown box text */
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+        color: #777;
+    }
+
+    /*gives sidebar width/height*/
+    nav.sidebar{
+        width: 200px;
+        height: 100%;
+        margin-left: -160px;
+        float: left;
+        z-index: 8000;
+        margin-bottom: 0px;
+    }
+
+    /*give sidebar 100% width;*/
+    nav.sidebar li {
+        width: 100%;
+    }
+
+    /* Move nav to full on mouse over*/
+    nav.sidebar:hover{
+        margin-left: 0px;
+    }
+    /*for hiden things when navbar hidden*/
+    .forAnimate{
+        opacity: 0;
+    }
+}
+
+/* .....NavBar: Fully showing nav bar..... */
+
+@media (min-width: 1330px) {
+
+    /*Allow main to be next to Nav*/
+    .main{
+        width: calc(100% - 200px); /*keeps 100% minus nav size*/
+        margin-left: 200px;
+    }
+
+    /*Show all nav*/
+    nav.sidebar{
+        margin-left: 0px;
+        float: left;
+    }
+    /*Show hidden items on nav*/
+    nav.sidebar .forAnimate{
+        opacity: 1;
+    }
+}
+
+nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #CCC;
+    background-color: transparent;
+}
+
+nav:hover .forAnimate{
+    opacity: 1;
+}
+section{
+    padding-left: 15px;
+}
+
+
+/*Breadcrumb*/
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+  }
+  
+  body {
+    text-align: center;
+    background-color: #1992e256;
+  }
+
+  
+  #breadcrumb {
+    list-style: none;
+    display: inline-block;
+  }
+  #breadcrumb .icon {
+    font-size: 14px;
+  }
+  #breadcrumb li {
+    float: left;
+  }
+  #breadcrumb li a {
+    color: #FFF;
+    display: block;
+    background: #3498db;
+    text-decoration: none;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px 0 5px;
+    text-align: center;
+    margin-right: 23px;
+  }
+  #breadcrumb li:nth-child(even) a {
+    background-color: #2980b9;
+  }
+  #breadcrumb li:nth-child(even) a:before {
+    border-color: #2980b9;
+    border-left-color: transparent;
+  }
+  #breadcrumb li:nth-child(even) a:after {
+    border-left-color: #2980b9;
+  }
+  #breadcrumb li:first-child a {
+    padding-left: 15px;
+    -moz-border-radius: 4px 0 0 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px 0 0 4px;
+  }
+  #breadcrumb li:first-child a:before {
+    border: none;
+  }
+  #breadcrumb li:last-child a {
+    padding-right: 15px;
+    -moz-border-radius: 0 4px 4px 0;
+    -webkit-border-radius: 0;
+    border-radius: 0 4px 4px 0;
+  }
+  #breadcrumb li:last-child a:after {
+    border: none;
+  }
+  #breadcrumb li a:before, #breadcrumb li a:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 0 solid #3498db;
+    border-width: 20px 10px;
+    width: 0;
+    height: 0;
+  }
+  #breadcrumb li a:before {
+    left: -20px;
+    border-left-color: transparent;
+  }
+  #breadcrumb li a:after {
+    left: 100%;
+    border-color: transparent;
+    border-left-color: #3498db;
+  }
+  #breadcrumb li a:hover {
+    background-color: #1abc9c;
+  }
+  #breadcrumb li a:hover:before {
+    border-color: #1abc9c;
+    border-left-color: transparent;
+  }
+  #breadcrumb li a:hover:after {
+    border-left-color: #1abc9c;
+  }
+  #breadcrumb li a:active {
+    background-color: #16a085;
+  }
+  #breadcrumb li a:active:before {
+    border-color: #16a085;
+    border-left-color: transparent;
+  }
+  #breadcrumb li a:active:after {
+    border-left-color: #16a085;
+  }
+
+  /*Radial Progress Bar*/
+
+  .progress-pie-chart {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #E5E5E5;
+    position: relative;
+  }
+  .progress-pie-chart.gt-50 {
+    background-color: #81CE97;
+  }
+  
+  .ppc-progress {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+    width: 200px;
+    height: 200px;
+    clip: rect(0, 200px, 200px, 100px);
+  }
+  .ppc-progress .ppc-progress-fill {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+    width: 200px;
+    height: 200px;
+    clip: rect(0, 100px, 200px, 0);
+    background: #3498db;
+    transform: rotate(60deg);
+  }
+  .gt-50 .ppc-progress {
+    clip: rect(0, 100px, 200px, 0);
+  }
+  .gt-50 .ppc-progress .ppc-progress-fill {
+    clip: rect(0, 200px, 200px, 100px);
+    background: #E5E5E5;
+  }
+  
+  .ppc-percents {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 173.9130434783px/2);
+    top: calc(50% - 173.9130434783px/2);
+    width: 173.9130434783px;
+    height: 173.9130434783px;
+    background: #fff;
+    text-align: center;
+    display: table;
+  }
+  .ppc-percents span {
+    display: block;
+    font-size: 2.6em;
+    font-weight: bold;
+    color: #3498db;
+  }
+  
+  .pcc-percents-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  
+  .progress-pie-chart {
+    margin: 50px auto 0;
+  }
+  /* End of radial progress bar */
+
+  /*2nd progress bar*/
+  .progress {
+    
+      position: absolute;
+    
+      top: 0;
+    
+      left: 0;
+    
+      width: 0;
+    
+      height: 3px;
+    
+      background: #29d;
+    
+      box-shadow: 0 0 3px #29d;
+    
+    }
+    
+     
+    
+    .text {
+    
+      position: absolute;
+    
+      top: 50%;
+    
+      left: 50%;
+    
+      color: #000;
+    
+      border: none;
+    
+      width: 100px;
+    
+      height: 100px;
+    
+      margin-top: -50px;
+    
+      margin-left: -50px;
+    
+      text-align: center;
+    
+      line-height: 100px;
+
+    }
+
+    .round-progress {
+    
+      fill: none;
+    
+      stroke: #29d;
+    
+      stroke-width: 5;
+    
+      stroke-dasharray: 1000;
+    
+    }
+    
+     
+    
+    .svg {
+    
+      position: absolute;
+    
+      top: 50%;
+    
+      left: 50%;
+    
+      width: 100px;
+    
+      height: 100px;
+    
+      margin-top: -50px;
+    
+      margin-left: -50px;
+    
+      transform: rotate(-90deg);
+    
+    }
+    
